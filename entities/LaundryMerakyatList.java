@@ -1,108 +1,78 @@
 package entities;
 
 public class LaundryMerakyatList {
+    private String name;
+    private String phoneNumber;
+    private String address;
+    private String packageType;
+    private int quantityKg;
+    private int totalPrice;
 
-    private long id;
-    private String namaPelanggan;
-    private String nomorTelepon;
-    private String alamatPelanggan;
-    private String jenisPaket;
-    private String jenisBarang;
-    private int beratKg;
-    private int hargaTotal;
-
-    // Constructor kosong
-    public LaundryMerakyatList() {}
-
-    // Constructor dengan parameter
-    public LaundryMerakyatList(long id, String namaPelanggan, String nomorTelepon, String alamatPelanggan,
-                               String jenisPaket, String jenisBarang, int beratKg, int hargaTotal) {
-        this.id = id;
-        this.namaPelanggan = namaPelanggan;
-        this.nomorTelepon = nomorTelepon;
-        this.alamatPelanggan = alamatPelanggan;
-        this.jenisPaket = jenisPaket;
-        this.jenisBarang = jenisBarang;
-        this.beratKg = beratKg;
-        this.hargaTotal = hargaTotal;
+    public LaundryMerakyatList(String name, String phoneNumber, String address, String packageType, int quantityKg, int totalPrice) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.packageType = packageType;
+        this.quantityKg = quantityKg;
+        this.totalPrice = totalPrice;
     }
 
-    // Getter dan Setter
-    public long getId() {
-        return id;
+    // Getters and Setters
+    public String getName() {
+        return name;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getNamaPelanggan() {
-        return namaPelanggan;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setNamaPelanggan(String namaPelanggan) {
-        this.namaPelanggan = namaPelanggan;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public String getNomorTelepon() {
-        return nomorTelepon;
+    public String getAddress() {
+        return address;
     }
 
-    public void setNomorTelepon(String nomorTelepon) {
-        this.nomorTelepon = nomorTelepon;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getAlamatPelanggan() {
-        return alamatPelanggan;
+    public String getPackageType() {
+        return packageType;
     }
 
-    public void setAlamatPelanggan(String alamatPelanggan) {
-        this.alamatPelanggan = alamatPelanggan;
+    public void setPackageType(String packageType) {
+        this.packageType = packageType;
     }
 
-    public String getJenisPaket() {
-        return jenisPaket;
+    public int getQuantityKg() {
+        return quantityKg;
     }
 
-    public void setJenisPaket(String jenisPaket) {
-        this.jenisPaket = jenisPaket;
+    public void setQuantityKg(int quantityKg) {
+        this.quantityKg = quantityKg;
     }
 
-    public String getJenisBarang() {
-        return jenisBarang;
+    public int getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setJenisBarang(String jenisBarang) {
-        this.jenisBarang = jenisBarang;
-    }
-
-    public int getBeratKg() {
-        return beratKg;
-    }
-
-    public void setBeratKg(int beratKg) {
-        this.beratKg = beratKg;
-    }
-
-    public int getHargaTotal() {
-        return hargaTotal;
-    }
-
-    public void setHargaTotal(int hargaTotal) {
-        this.hargaTotal = hargaTotal;
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     @Override
     public String toString() {
-        return "LaundryMerakyatList{" +
-                "id=" + id +
-                ", namaPelanggan='" + namaPelanggan + '\'' +
-                ", nomorTelepon='" + nomorTelepon + '\'' +
-                ", alamatPelanggan='" + alamatPelanggan + '\'' +
-                ", jenisPaket='" + jenisPaket + '\'' +
-                ", jenisBarang='" + jenisBarang + '\'' +
-                ", beratKg=" + beratKg +
-                ", hargaTotal=" + hargaTotal +
-                '}';
+        return "Nama: " + name +
+                "\nNo. HP: " + phoneNumber +
+                "\nAlamat: " + address +
+                "\nPaket: " + packageType +
+                "\nJumlah KG: " + quantityKg +
+                "\nTotal Harga: Rp " + totalPrice;
     }
 }
