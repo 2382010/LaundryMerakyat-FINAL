@@ -1,23 +1,21 @@
-import entities.LaundryMerakyatList;
+import repositories.LaundryMerakyatRepositoryImpl;
+import services.LaundryMerakyatServicesImpl;
+import view.LaundryMerakyatViewImpl;
+
+import java.util.Scanner;
 
 public class Main {
-    public class MainApplication {
-        public static void main(String[] args) {
-            // Membuat objek entitas LaundryMerakyatList
-            LaundryMerakyatList laundry = new LaundryMerakyatList(
-                    1,
-                    "Timothy Pakpahan",
-                    "08123456789",
-                    "Jalan Kemerdekaan No. 123",
-                    "Paket Cepat",
-                    "Pakaian",
-                    5,
-                    50000
-            );
-            // Menampilkan data laundry
-            System.out.println("Data Laundry:");
-            System.out.println(laundry.toString());
-        }
-    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
+        // Initialize dependencies
+        LaundryMerakyatRepositoryImpl repository = new LaundryMerakyatRepositoryImpl();
+        LaundryMerakyatServicesImpl service = new LaundryMerakyatServicesImpl(repository);
+        LaundryMerakyatViewImpl view = new LaundryMerakyatViewImpl(service, scanner);
+
+        // Run the application
+        view.showMenu();
+
+        scanner.close();
+    }
 }
