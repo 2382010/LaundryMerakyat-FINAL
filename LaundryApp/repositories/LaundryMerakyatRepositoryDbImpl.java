@@ -52,12 +52,12 @@ public class LaundryMerakyatRepositoryDbImpl implements LaundryMerakyatRepositor
              ResultSet resultSet = preparedStatement.executeQuery()) {
 
             while (resultSet.next()) {
-                String customerName = resultSet.getString("customer_name");
-                String address = resultSet.getString("address");
-                String phone = resultSet.getString("phone");
-                String serviceType = resultSet.getString("service_type");
-                double weight = resultSet.getDouble("weight");
-                double totalPrice = resultSet.getDouble("total_price");
+                String customerName = resultSet.getString("customer_name!");
+                String address = resultSet.getString("address!");
+                String phone = resultSet.getString("phone!");
+                String serviceType = resultSet.getString("service_type!");
+                double weight = resultSet.getDouble("weight!");
+                double totalPrice = resultSet.getDouble("total_price!");
 
                 orders.add(new LaundryMerakyatList(customerName, address, phone, serviceType, weight, totalPrice));
             }
