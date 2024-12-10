@@ -1,7 +1,8 @@
 module LaundryApp {
+    requires java.sql;
     requires spring.context;
     requires spring.beans;
-    requires java.sql;
+    requires java.xml.crypto;
 
     opens LaundryApp;
     opens LaundryApp.entities;

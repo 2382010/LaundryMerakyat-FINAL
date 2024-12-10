@@ -14,7 +14,6 @@ public class LaundryMerakyatRepositoryDbImpl implements LaundryMerakyatRepositor
 
     private final Database database;
 
-    // Konstruktor untuk inisialisasi database
     public LaundryMerakyatRepositoryDbImpl(Database database) {
         this.database = database;
     }
@@ -31,7 +30,6 @@ public class LaundryMerakyatRepositoryDbImpl implements LaundryMerakyatRepositor
             preparedStatement.setString(4, order.getServiceType());
             preparedStatement.setDouble(5, order.getWeight());
             preparedStatement.setDouble(6, order.getTotalPrice());
-
             preparedStatement.executeUpdate();
             System.out.println("Order saved successfully!");
         } catch (Exception e) {
@@ -40,7 +38,12 @@ public class LaundryMerakyatRepositoryDbImpl implements LaundryMerakyatRepositor
     }
 
     @Override
-    public ArrayList<LaundryMerakyatList> getOrders() {
+    public Boolean remove(Integer id) {
+        return null;
+    }
+
+    @Override
+    public LaundryMerakyatList[] getOrders() {
         String sqlStatement = "SELECT * FROM laundry_orders";
         ArrayList<LaundryMerakyatList> orders = new ArrayList<>();
 
@@ -61,13 +64,13 @@ public class LaundryMerakyatRepositoryDbImpl implements LaundryMerakyatRepositor
         } catch (Exception e) {
             System.out.println("Error while retrieving orders: " + e.getMessage());
         }
-        return orders;
+        return orders.toArray(new LaundryMerakyatList[0]);
     }
 
     @Override
-    public double calculateTotalPrice() {
+    public Double calculateTotalPrice() {
         String sqlStatement = "SELECT SUM(total_price) AS total FROM laundry_orders";
-        double totalPrice = 0;
+        Double totalPrice = 0.0;
 
         try (Connection connection = database.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sqlStatement);
@@ -83,7 +86,16 @@ public class LaundryMerakyatRepositoryDbImpl implements LaundryMerakyatRepositor
     }
 
     @Override
-    public void addPackagePrice(double price) {
-        // Implementasi tambahan jika diperlukan
+    public void addPackagePrice(Double price) {
+    }
+
+    @Override
+    public Boolean removeOrder(Integer id) {
+        return null;
+    }
+
+    @Override
+    public Boolean editOrder(LaundryMerakyatList order) {
+        return null;
     }
 }

@@ -1,19 +1,19 @@
 package LaundryApp.repositories;
 
 import LaundryApp.entities.LaundryMerakyatList;
-import java.util.ArrayList;
 
 public interface LaundryMerakyatRepository {
-    // Simpan data pesanan laundry
+    Boolean remove(Integer id);
+
+    LaundryMerakyatList[] getOrders();
+
     void saveOrder(LaundryMerakyatList laundryOrder);
 
-    // Ambil semua data pesanan laundry
-    ArrayList<LaundryMerakyatList> getOrders();
+    Double calculateTotalPrice();
 
-    // Hitung total harga untuk semua pesanan
-    double calculateTotalPrice();
+    void addPackagePrice(Double price);
 
-    // Tambahkan harga untuk paket layanan tertentu
-    void addPackagePrice(double price);
+    Boolean removeOrder(Integer id);
+
+    Boolean editOrder(LaundryMerakyatList order);
 }
-

@@ -1,45 +1,32 @@
 package LaundryApp.entities;
 
 public class LaundryMerakyatList {
-    private String customerName; // Nama pelanggan
-    private String address;      // Alamat pelanggan
-    private String phone;        // Nomor telepon pelanggan
-    private String serviceType;  // Jenis layanan (cuci, setrika, dll.)
-    private double weight;       // Berat cucian dalam kg
-    private double totalPrice;   // Harga total cucian
+    private String customerName;
+    private String address;
+    private String phone;
+    private String serviceType;
+    private Double weight;
+    private Double totalPrice;
 
-    // Konstruktor
-    public LaundryMerakyatList(String customerName, String address, String phone, String serviceType, double weight, double totalPrice) {
-        this.customerName = customerName;
-        this.address = address;
-        this.phone = phone;
-        this.serviceType = serviceType;
-        this.weight = weight;
-        this.totalPrice = totalPrice;
+    public LaundryMerakyatList() {
     }
 
-    // Getter dan Setter
+    public LaundryMerakyatList(String customerName, String address, String phone, String serviceType, double weight, double totalPrice) {
+    }
+
     public String getCustomerName() {
         return customerName;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(final String phone) {
         this.phone = phone;
     }
 
@@ -47,36 +34,26 @@ public class LaundryMerakyatList {
         return serviceType;
     }
 
-    public void setServiceType(String serviceType) {
+    public void setServiceType(final String serviceType) {
         this.serviceType = serviceType;
     }
 
-    public double getWeight() {
+    public Double getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(final Double weight) {
         this.weight = weight;
     }
 
-    public double getTotalPrice() {
+    public Double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(double totalPrice) {
+    public void setTotalPrice(final Double totalPrice) {
         this.totalPrice = totalPrice;
     }
 
-    @Override
-    public String toString() {
-        return "LaundryMerakyatList{" +
-                "customerName='" + customerName + '\'' +
-                ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                ", serviceType='" + serviceType + '\'' +
-                ", weight=" + weight +
-                ", totalPrice=" + totalPrice +
-                '}';
+    public void setId(Integer id) {
     }
 }
-
